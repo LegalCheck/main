@@ -6,7 +6,7 @@
   * [Associate resources](http://legalhealthcheck.org.au/legalhealthcheck/resources.html)
   * [Their tutorial](http://legalhealthcheck.org.au/legalhealthcheck/lhc-tutorial.html)
 * [Legal Health Check-Up Canada](https://www.legalhealthcheckup.ca/en/)
-* [List of legal health checks - Canada](http://www.plelearningexchange.ca/resources/legal-health-checks/legal-health-checks-ontario-canada
+* [List of legal health checks - Canada](http://www.plelearningexchange.ca/resources/legal-health-checks/legal-health-checks-ontario-canada)
 
 #### Inspiration
 
