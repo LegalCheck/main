@@ -4,7 +4,6 @@
 3. Have you recently had any problems with a product or item you’ve bought?
 4. Have you recently had any problems with a service you’ve bought?
 5. Do you have any unpaid fines? 
-   * Would you like to explore your options? E.g. smaller instalments / Waivers?
 ### Housing Concerns
 1. Have you recently received an eviction notice?
 2. Was your tenancy bond lodged and/or returned?
