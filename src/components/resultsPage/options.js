@@ -3,9 +3,9 @@ import React from 'react'
 const Options = ({state, dispatch}) => {
     return (
         <div>
-        <input type="button" name="contact" value="Find My Local Community Law"/>
-        <input type="button" name="save" value="Save results as PDF" onClick={() => console.log("Done")}/>
-        <input type="button" name="start-again" value="Done" onClick={() => console.log("Done")}/>
+        <a href="http://communitylaw.org.nz/our-law-centres/" target="_blank"><input type="button" name="contact" value="Find My Local Community Law"/></a>
+        <input type="button" name="save" value="Save results as PDF" onClick={() => console.log("PDF save function here!")}/>
+        <input type="button" name="start-again" value="Done" onClick={() => dispatch({type: 'START_OVER'})}/>
         </div>
     )
 }
