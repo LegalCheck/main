@@ -24,6 +24,8 @@ const reducer = (state = initialState, { type, payload = {} }) => {
     case 'START_OVER':
       newState.startedQuiz = false
       newState.finishedQuiz = false
+      newState.results = []
+      newState.quizPosition = 0
       return newState
       break;
     default:

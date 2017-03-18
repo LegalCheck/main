@@ -31,7 +31,7 @@ const initialState = {
     {id: 26, text: "Do you have concerns around your immigration status in New Zealand?", statement: "You have concerns about your immigration status in NZ", category: 'Other'},
     {id: 27, text: "Are you having trouble bringing family members to New Zealand?", statement: "You are having trouble bringing family members to NZ", category: 'Other'},
     {id: 28, text: "Are you worried about how your child is being treated at school?", statement: "You are worried about how your child is being treated at school", category: 'Other'}
-],
+    ],
   results: []
 }
 
