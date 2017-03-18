@@ -3,6 +3,7 @@ import { Col, Grid, PageHeader } from 'react-bootstrap' // See https://react-boo
 import Header from './header'
 import Footer from './footer'
 import HomepageMain from './homepage/main'
+import QuizPage from './quiz/main'
 
 const App = ({state, dispatch}) => {
   if (!state.startedQuiz) {
@@ -17,7 +18,7 @@ const App = ({state, dispatch}) => {
     return (
       <div>
         <Header />
-        <h1>It works!</h1>
+        <QuizPage state={state} dispatch={dispatch}/>
         <Footer />
       </div>
     )
