@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "base62": "^1.1.2",
+    "clone": "^2.1.1",
     "history": "^4.6.1",
     "ramda": "^0.23.0",
     "react": "^15.4.2",
