@@ -10,7 +10,7 @@ const App = ({state, dispatch}) => {
     return (
       <div>
         <Header />
-        <HomepageMain dispatch={dispatch} />
+        <HomepageMain state={state} dispatch={dispatch} />
         <Footer />
       </div>
     )

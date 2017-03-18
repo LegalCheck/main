@@ -2,11 +2,10 @@ import React from 'react'
 import Legal from './legal'
 import HomepageButtons from './buttons'
 
-const HomepageMain = ({dispatch}) => (
+const HomepageMain = ({state, dispatch}) => (
   <div>
-    <h3>Do you need a lawyer?</h3>
-    <HomepageButtons dispatch={dispatch} />
     <Legal />
+    <HomepageButtons state={state} dispatch={dispatch} />
   </div>
 )
 

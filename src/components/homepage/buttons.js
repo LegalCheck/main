@@ -1,10 +1,14 @@
 import React from 'react'
+import Progress from '../../utilities/progress'
 
-const HomepageButtons = ({dispatch}) => (
-  <div>
-    <button onClick={() => dispatch({type: 'START_QUIZ'})}>Start!</button>
-    <button>Print questions</button>
-  </div>
-)
+const HomepageButtons = ({state, dispatch}) => {
+  return (
+    <div>
+      <button className='startbtn' onClick={() =>
+        {
+        dispatch({type: 'START_QUIZ'})}}>Start!</button>
+    </div>
+  )
+}
 
 export default HomepageButtons
