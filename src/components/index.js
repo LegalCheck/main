@@ -1,21 +1,25 @@
-import React from 'react'
-import { Col, Grid, PageHeader } from 'react-bootstrap' // See https://react-bootstrap.github.io/components.html
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import cuid from 'cuid'
 
-const App = () => (
-  <div>
-    <Grid>
-      <PageHeader>Legal CheckUp <small>Do I need a lawyer?</small></PageHeader>
-      <Col md={4}>
-        <p>Col left</p>
-      </Col>
-      <Col md={4}>
-        <p>Col middle</p>
-      </Col>
-      <Col md={4}>
-        <p>Col right</p>
-      </Col>
-    </Grid>
-  </div>
-)
+class Home extends Component {
+  componentWillMount () {
+    this.id = cuid()
+  }
 
-export default App
+  render () {
+    return (
+      <div>
+        <p>
+          Try our Legal CheckUp to see how the law can help you.
+        </p>
+        <p>
+          <Link className="btn btn-success" to={`/forms/${this.id}`}>Begin</Link>
+        </p>
+      </div>
+    )
+  }
+}
+
+
+export default Home
