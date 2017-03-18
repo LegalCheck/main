@@ -1,10 +1,12 @@
 import React from 'react'
 import { Col, Grid, PageHeader } from 'react-bootstrap' // See https://react-bootstrap.github.io/components.html
+import Header from './header'
+import Footer from './footer'
 
 const App = ({state}) => (
   <div>
+    <Header />
     <Grid>
-      <PageHeader>Legal CheckUp <small>Do I need a lawyer?</small></PageHeader>
       <Col md={4}>
         <p>Col left</p>
       </Col>
@@ -15,6 +17,7 @@ const App = ({state}) => (
         <p>Col right</p>
       </Col>
     </Grid>
+    <Footer />
   </div>
 )
 
