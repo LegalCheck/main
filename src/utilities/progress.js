@@ -1,4 +1,3 @@
-
 function Progress(progress) {
   var speechContainer = document.getElementsByClassName("js-speechContainer")[0];
   var speechDirection = document.getElementsByClassName("js-direction")[0];
