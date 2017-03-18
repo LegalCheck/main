@@ -8,17 +8,29 @@ const Options = ({state, dispatch}) => {
         <input type="button" name="answer" value="Yes" onClick={() => {
                 answerValue = "Yes"
                 dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                dispatch({type: 'NAVIGATE', payload: 1})
+                if (state.quizPosition === state.questions.length - 1) {
+                    dispatch({type: 'FINISH_QUIZ'})
+                } else {
+                    dispatch({type: 'NAVIGATE', payload: 1})
+                }
             }}/>
         <input type="button" name="answer" value="Unsure" onClick={() => {
                 answerValue = "Unsure"
                 dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                dispatch({type: 'NAVIGATE', payload: 1})
+                if (state.quizPosition === state.questions.length - 1) {
+                    dispatch({type: 'FINISH_QUIZ'})
+                } else {
+                    dispatch({type: 'NAVIGATE', payload: 1})
+                }
             }}/>
         <input type="button" name="answer" value="No" onClick={() => {
                 answerValue = "No"
                 dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                dispatch({type: 'NAVIGATE', payload: 1})
+                if (state.quizPosition === state.questions.length - 1) {
+                    dispatch({type: 'FINISH_QUIZ'})
+                } else {
+                    dispatch({type: 'NAVIGATE', payload: 1})
+                }
             }}/>
         </div>
         <div>
