@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Options = () => (
+const Options = ({state, dispatch}) => (
   <div>
     <div>
       <input type="button" name="answer" value="Y"/>
@@ -8,8 +8,8 @@ const Options = () => (
       <input type="button" name="answer" value="Unsure"/>
     </div>
     <div>
-      <input type="button" name="navigate" value="Back"/>
-      <input type="button" name="navigate" value="Next"/>
+      <input type="button" name="navigate" value="Back" onClick={() => dispatch({type: 'NAVIGATE', payload: -1})}/>
+      <input type="button" name="navigate" value="Next" onClick={() => dispatch({type: 'NAVIGATE', payload: 1})}/>
     </div>
   </div>
 )

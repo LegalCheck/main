@@ -6,8 +6,8 @@ import ProgressBar from '../progressBar'
 const QuizPage = ({state, dispatch}) => (
   <div>
     <ProgressBar state={state} dispatch={dispatch}/>
-    <QuestionText />
-    <Options />
+    <QuestionText state={state} dispatch={dispatch}/>
+    <Options state={state} dispatch={dispatch}/>
   </div>
 )
 
