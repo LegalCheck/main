@@ -1,21 +1,27 @@
 import React from 'react'
 import { Col, Grid, PageHeader } from 'react-bootstrap' // See https://react-bootstrap.github.io/components.html
+import Header from './header'
+import Footer from './footer'
+import HomepageMain from './homepage/main'
 
-const App = () => (
-  <div>
-    <Grid>
-      <PageHeader>Legal CheckUp <small>Do I need a lawyer?</small></PageHeader>
-      <Col md={4}>
-        <p>Col left</p>
-      </Col>
-      <Col md={4}>
-        <p>Col middle</p>
-      </Col>
-      <Col md={4}>
-        <p>Col right</p>
-      </Col>
-    </Grid>
-  </div>
-)
+const App = ({state, dispatch}) => {
+  if (!state.startedQuiz) {
+    return (
+      <div>
+        <Header />
+        <HomepageMain dispatch={dispatch} />
+        <Footer />
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <Header />
+        <h1>It works!</h1>
+        <Footer />
+      </div>
+    )
+  }
+}
 
 export default App

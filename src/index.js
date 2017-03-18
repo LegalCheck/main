@@ -10,9 +10,13 @@ import reducer from './redux/reducer'
 const root = document.getElementById('root')
 const store = createStore(reducer, devToolsEnhancer())
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  root
-)
+store.subscribe( () => {
+  render(
+    <Provider store={store}>
+    <App state={store.getState()} dispatch={store.dispatch}/>
+    </Provider>,
+    root
+  )
+})
+
+store.dispatch({type: 'INIT'})
