@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => (
   <header>
-    <h3>Header! This is a placeholder</h3>
+    <h3 className="headerTitle">LEGAL CHECKUP</h3>
   </header>
 )
 
