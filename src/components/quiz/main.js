@@ -1,10 +1,11 @@
 import React from 'react'
 import Options from './options'
 import QuestionText from './question'
+import ProgressBar from '../progressBar'
 
-const QuizPage = () => (
+const QuizPage = ({state, dispatch}) => (
   <div>
-    <h3>QuizPage! This is a placeholder</h3>
+    <ProgressBar state={state} dispatch={dispatch}/>
     <QuestionText />
     <Options />
   </div>

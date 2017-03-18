@@ -18,7 +18,7 @@ const App = ({state, dispatch}) => {
     return (
       <div>
         <Header />
-        <QuizPage />
+        <QuizPage state={state} dispatch={dispatch}/>
         <Footer />
       </div>
     )
