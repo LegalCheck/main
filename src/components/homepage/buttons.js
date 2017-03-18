@@ -2,8 +2,7 @@ import React from 'react'
 
 const HomepageButtons = ({dispatch}) => (
   <div>
-    <button onClick={() => dispatch({type: 'START_QUIZ'})}>Start!</button>
-    <button>Print questions</button>
+    <button className="startButton" onClick={() => dispatch({type: 'START_QUIZ'})}>START!</button>
   </div>
 )
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => (
   <footer>
-    <h3>Footer! This is a placeholder</h3>
+    <a className="footerCopyright">Copyright</a>
   </footer>
 )
 
