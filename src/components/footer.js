@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => (
   <footer>
-    <a href ='#'>Copyright</a>
+    <a className="footerCopyright">Copyright</a>
   </footer>
 )
 

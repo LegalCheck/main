@@ -1,9 +1,8 @@
 import React from 'react'
 
 const Legal = () => (
-  <div>
-    <h3>Can the Law Help Me?</h3>
-    <p>This Legal Checkup identifies potential legal issues and can be used to find out what a lawyer could help you with</p>
+  <div className="homeLegal">
+    <p>All of your answers will be confidential. Answering these questions does not make you a client of Community Law Wellington and Hutt Valley.</p>
   </div>
 )
 
