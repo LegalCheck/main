@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => (
   <footer>
-    <h1>Footer! This is a placeholder</h1>
+    <h3>Footer! This is a placeholder</h3>
   </footer>
 )
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => (
   <header>
-    <h1>Header! This is a placeholder</h1>
+    <h3>Header! This is a placeholder</h3>
   </header>
 )
 
