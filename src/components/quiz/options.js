@@ -1,6 +1,8 @@
 import React from 'react'
+import Progress from '../../utilities/progress'
 
 const Options = ({state, dispatch}) => {
+    var progress = state.quizPosition/state.questions.length * 100
     let answerValue = "skip"
     return (
         <div>
@@ -35,6 +37,7 @@ const Options = ({state, dispatch}) => {
         </div>
         <div>
         <input type="button" name="navigate" value="Back" onClick={() => {
+              Progress(progress)
               if (state.quizPosition === 0) return
               else {
                   dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
@@ -43,6 +46,7 @@ const Options = ({state, dispatch}) => {
           }
         }/>
         <input type="button" name="navigate" value="Next" onClick={() => {
+              Progress(progress)
               if (state.quizPosition === state.questions.length - 1) {
                   dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
                   dispatch({type: 'FINISH_QUIZ'})
