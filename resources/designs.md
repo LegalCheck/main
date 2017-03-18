@@ -2,28 +2,28 @@
 
 #### Front page - desktop
 
-![Front page (desktop)](./design-images/FrontPage_desktop.png "Front page (desktop)")
+<img src="./design-images/FrontPage_desktop.png" alt="Front page (desktop)" width="700">
 
 #### Front page - mobile
 
-![Front page (mobile)](./design-images/FrontPage_mobile.png "Front page (mobile)")
+<img src="./design-images/FrontPage_mobile.png" alt="Front page (mobile)" width="400">
 
 #### Question page - desktop
 
-![Question page (desktop)](./design-images/QuestionPage_desktop.png "Question page (desktop)")
+<img src="./design-images/QuestionPage_desktop.png" alt="Question page (desktop)" width="700">
 
 #### Question page - mobile
 
-![Question page (mobile)](./design-images/QuestionPage_mobile.png "Question page (mobile)")
+<img src="./design-images/QuestionPage_mobile.png" alt="Question page (mobile)" width="400">
 
 #### Results page - desktop
 
-![Results page (desktop)](./design-images/ResultsPage_desktop.png "Results page (desktop)")
+<img src="./design-images/ResultsPage_desktop.png" alt="Results page (desktop)" width="700">
 
 #### Results page - mobile
 
-![Results page (mobile)](./design-images/ResultsPage_mobile.png "Results page (mobile)")
+<img src="./design-images/ResultsPage_mobile.png" alt="Results page (mobile)" width="400">
 
 #### Results page - mobile (alternative)
 
-![Results page (mobile - alternative)](./design-images/ResultsPage_mobile_alternative.png "Results page (mobile - alternative)")
+<img src="./design-images/ResultsPage_mobile_alternative.png" alt="Results page (mobile)" width="400">
