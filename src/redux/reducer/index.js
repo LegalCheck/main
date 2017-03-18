@@ -25,6 +25,7 @@ const reducer = (state = initialState, { type, payload = {} }) => {
       newState.startedQuiz = false
       newState.finishedQuiz = false
       newState.results = []
+      newState.quizPosition = 0
       return newState
       break;
     default:
