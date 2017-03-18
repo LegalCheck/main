@@ -1,11 +1,12 @@
-export const updateAnswers = (answers = {}, formId, item, answer) => {
-  const { id, version } = item
-
+export const updateAnswers = (answers = {}, formId, categoryId, questionId, answer) => {
   return {
     ...answers,
     [formId]: {
       ...(answers[formId] || {}),
-      [`${id}:${version}`]: answer
+      [questionId]: {
+        categoryId,
+        answer
+      }
     }
   }
 }

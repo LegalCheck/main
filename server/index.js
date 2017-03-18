@@ -4,28 +4,14 @@ const fs = require('fs')
 const corsMiddleware = require('restify-cors-middleware')
 const low = require('lowdb')
 const nodemailer = require('nodemailer')
+const _ = require('lodash')
 
-const db = low('db.json')
-db.defaults({
-  questions: [
-    {
-      "id": 1,
-      "question": "What is your name?",
-      "version": 1
-    },
-    {
-      "id": 2,
-      "question": "What is your quest?",
-      "version": 1
-    },
-    {
-      "id": 3,
-      "question": "What is your favourite colour?",
-      "version": 1
-    }
-  ],
-  answers: []
-}).write()
+const adb = low('./data/admins.json')
+adb.defaults(require('./defaults').admins).write()
+const fdb = low('./data/form.json')
+fdb.defaults(require('./defaults').form).write()
+const rdb = low('./data/responses.json')
+rdb.defaults(require('./defaults').responses).write()
 
 const server = restify.createServer({
   name: 'LegalCheckUp'
@@ -66,7 +52,7 @@ function send (req, res, next) {
   return next()
 }
 
-function sendMail (req, res, next) {
+function sendResults (req, res, next) {
   const mailOptions = {
       from: process.env.MAILER_ADDRESS,
       to: process.env.MAILER_RECIPIENT,
@@ -88,26 +74,62 @@ function sendMail (req, res, next) {
   })
 }
 
-function putAnswers (req, res, next) {
-  db.get('answers').push({
-    id: req.params.formId,
-    responses: []
-  }).write()
+function getById (items, id) {
+  return _.find(
+    items,
+    function (item) { return item.id === id }
+  ) || {}
+}
 
-  const questions = db.get('questions').value()
+function mapForm (layout, categories, questions) {
+  return _.map(
+    layout,
+    function (category) {
+      return _.assign(
+        getById(categories, category.categoryId),
+        {
+          questions: _.map(
+            category.questions,
+            function (id) {
+              return _.assign(
+                {
+                  id: id
+                },
+                _.get(questions, id, {})
+              )
+            }
+          )
+        }
+      )
+    }
+  )
+}
 
-  res.send(questions)
+function startCheckup (req, res, next) {
+  if (!rdb.get('responses').find({ id: req.params.formId }).value()) {
+    rdb.get('responses').push({
+      id: req.params.formId,
+      responses: []
+    }).write()
+  }
+
+  const categories = fdb.get('categories').value()
+  const layout = fdb.get('layout').value()
+  const questions = fdb.get('questions').value()
+  const form = mapForm(layout, categories, questions)
+
+  res.send(form)
 
   return next()
 }
 
-function putAnswer (req, res, next) {
+function updateAnswer (req, res, next) {
 
   return next()
 }
 
-server.put('/forms/:formId', putAnswers)
-server.patch('/forms/:formId', putAnswer)
-server.get('/mailer', sendMail)
+server.put('/forms/:formId', startCheckup)
+server.patch('/forms/:formId', updateAnswer)
+server.get('/mailer', sendResults)
 
 server.listen(3001)

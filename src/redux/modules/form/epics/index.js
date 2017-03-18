@@ -31,10 +31,9 @@ export const updateAnswersEpic = function (action$) {
         Observable.ajax.patch(
           `http://localhost:3001/forms/${payload.formId}`,
           {
-            id: payload.formId,
-            questionId: payload.item.id,
-            version: payload.item.version,
-            answer: payload.answer
+            response: {
+              [payload.question]: payload.answer
+            }
           },
           {
             'Content-Type': 'application/json'

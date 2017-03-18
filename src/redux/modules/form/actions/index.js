@@ -40,12 +40,13 @@ export const fetchFormFailed = function (error) {
   }
 }
 
-export const updateAnswer = function (formId, item, answer) {
+export const updateAnswer = function (formId, categoryId, questionId, answer) {
   return {
     type: UPDATE_ANSWER,
     payload: {
       formId: formId || 'xyz',
-      item,
+      categoryId,
+      questionId,
       answer
     }
   }

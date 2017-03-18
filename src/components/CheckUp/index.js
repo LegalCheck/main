@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { map } from 'lodash'
+import { get, map } from 'lodash'
 import { Link } from 'react-router-dom'
 
-import Question from '../Question'
+import Category from '../Category'
 import { actions, selectors } from '../../redux/modules/form'
 
 class CheckUp extends Component {
@@ -16,14 +16,12 @@ class CheckUp extends Component {
   }
 
   render () {
-    const { form, handleClick, isLoaded } = this.props
-
-    console.log('form', form)
+    const { form, formId, isLoaded } = this.props
 
     const controls = map(
       form,
-      (item, key) => (
-        <Question key={key} item={item} handleClick={handleClick}/>
+      (category, key) => (
+        <Category key={key} category={category} formId={formId}/>
       )
     )
 
@@ -44,25 +42,27 @@ class CheckUp extends Component {
 
 CheckUp.propTypes = {
   form: PropTypes.array,
-  handleClick: PropTypes.func.isRequired,
+  formId: PropTypes.string.isRequired,
   isLoaded: PropTypes.bool,
   loadForm: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
+  const formId = get(props, 'match.params.formId', '')
+
   return {
     form: selectors.getForm(state) || [],
+    formId,
     isLoaded: selectors.isLoaded(state)
   }
 }
 
-const mapDispatchToProps = (dispatch, { match }) => {
+const mapDispatchToProps = (dispatch, props) => {
+  const formId = get(props, 'match.params.formId', '')
+
   return {
-    handleClick (item, answer) {
-      dispatch(actions.updateAnswer(match.params.formId, item, answer))
-    },
     loadForm () {
-      dispatch(actions.fetchForm(match.params.formId))
+      dispatch(actions.fetchForm(formId))
     }
   }
 }
