@@ -12,7 +12,7 @@ const store = createStore(reducer, devToolsEnhancer())
 
 render(
   <Provider store={store}>
-    <App state={store.getState()}/>
+    <App state={store.getState()} dispatch={store.dispatch}/>
   </Provider>,
   root
 )

@@ -1,4 +1,5 @@
 const initialState = {
+  startedQuiz: false,
   questions: {
     money: [
       {id: 1, text: "Is anyone chasing you for money?", statement: "Someone is chasing you for money"},

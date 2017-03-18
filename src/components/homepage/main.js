@@ -2,10 +2,10 @@ import React from 'react'
 import Legal from './legal'
 import HomepageButtons from './buttons'
 
-const HomepageMain = () => (
+const HomepageMain = ({dispatch}) => (
   <div>
     <h3>Do you need a lawyer?</h3>
-    <HomepageButtons />
+    <HomepageButtons dispatch={dispatch} />
     <Legal />
   </div>
 )

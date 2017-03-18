@@ -1,8 +1,8 @@
 import React from 'react'
 
-const HomepageButtons = () => (
+const HomepageButtons = ({dispatch}) => (
   <div>
-    <button>Start!</button>
+    <button onClick={() => dispatch({type: 'START_QUIZ'})}>Start!</button>
     <button>Print questions</button>
   </div>
 )
