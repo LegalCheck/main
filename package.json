@@ -18,7 +18,8 @@
     "eslint-plugin-jest": "^19.0.1",
     "eslint-plugin-promise": "^3.5.0",
     "react-scripts": "0.9.5",
-    "redux-devtools-extension": "^2.13.0"
+    "redux-devtools-extension": "^2.13.0",
+    "tape": "^4.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
