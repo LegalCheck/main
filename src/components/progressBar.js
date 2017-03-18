@@ -1,8 +1,8 @@
 import React from 'react'
 
 const ProgressBar = ({state, dispatch}) => {
-    var category = state.questions[20].category
-    var progress = 20/state.questions.length * 100
+    var category = state.questions[state.quizPosition].category
+    var progress = state.quizPosition/state.questions.length * 100
 
     return (
         <div className="progress-bar">
