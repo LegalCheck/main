@@ -1,14 +1,14 @@
 import React from 'react'
 import Options from './options'
-import QuestionText from './question'
+import Summary from './summary'
 import ProgressBar from '../progressBar'
 
-const QuizPage = ({state, dispatch}) => (
+const SummaryPage = ({state, dispatch}) => (
   <div>
     <ProgressBar state={state} dispatch={dispatch}/>
-    <QuestionText state={state} dispatch={dispatch}/>
+    <Summary state={state} dispatch={dispatch}/>
     <Options state={state} dispatch={dispatch}/>
   </div>
 )
 
-export default QuizPage
+export default SummaryPage
