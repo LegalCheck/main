@@ -17,6 +17,10 @@ const reducer = (state = initialState, { type, payload = {} }) => {
       newState.quizPosition += payload
       return newState
       break;
+    case 'FINISH_QUIZ':
+      newState.finishedQuiz = true
+      return newState
+      break;
     default:
       return newState
   }

@@ -16,8 +16,12 @@ const Options = ({state, dispatch}) => {
           }
         }/>
         <input type="button" name="navigate" value="Next" onClick={() => {
-              dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-              dispatch({type: 'NAVIGATE', payload: 1})
+              if (state.quizPosition === state.questions.length - 1) {
+                  dispatch({type: 'FINISH_QUIZ'})
+              } else {
+                  dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
+                  dispatch({type: 'NAVIGATE', payload: 1})
+              }
           }
         }/>
         </div>

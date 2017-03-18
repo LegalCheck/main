@@ -4,6 +4,8 @@ import Header from './header'
 import Footer from './footer'
 import HomepageMain from './homepage/main'
 import QuizPage from './quiz/main'
+import SummaryPage from './resultsPage/main'
+
 
 const App = ({state, dispatch}) => {
   if (!state.startedQuiz) {
@@ -11,6 +13,14 @@ const App = ({state, dispatch}) => {
       <div>
         <Header />
         <HomepageMain dispatch={dispatch} />
+        <Footer />
+      </div>
+    )
+} else if (state.finishedQuiz) {
+    return (
+      <div>
+        <Header />
+        <SummaryPage state={state} dispatch={dispatch}/>
         <Footer />
       </div>
     )
