@@ -9,6 +9,10 @@ const reducer = (state = initialState, { type, payload = {} }) => {
       newState.startedQuiz = true
       return newState
       break;
+    case 'ANSWER_QUESTION':
+      newState.results.push({id: newState.quizPosition +1, answer: payload})
+      return newState
+      break;
     case 'NAVIGATE':
       newState.quizPosition += payload
       return newState
