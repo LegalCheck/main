@@ -8,9 +8,14 @@ function createPDF(state) {
     }
   })
   console.log(answers)
-  let doc = new jsPDF()
+  let doc = new jsPDF("portrait")
 
-  doc.text('tsting')
+  doc.setFontSize(20)
+  doc.text(15, 20, "Summary of answers from 'Can the Law Help Me?'")
+  doc.setFontSize(12)
+  doc.setLineWidth(150)
+  doc.text(15, 32, "Testing!!!")
+  doc.text(15, 52, JSON.stringify(answers))
   doc.save('answers.pdf')
 }
 
