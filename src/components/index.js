@@ -8,14 +8,14 @@ import SummaryPage from './resultsPage/main'
 
 
 const App = ({state, dispatch}) => {
-  if (!state.startedQuiz) {
-    return (
-      <div>
-        <Header />
-        <HomepageMain state={state} dispatch={dispatch} />
-        <Footer />
-      </div>
-    )
+  if (state.startedQuiz && state.finishedQuiz === false) {
+      return (
+          <div>
+              <Header />
+              <QuizPage state={state} dispatch={dispatch}/>
+              <Footer />
+          </div>
+      )
 } else if (state.finishedQuiz) {
     return (
       <div>
@@ -25,13 +25,13 @@ const App = ({state, dispatch}) => {
       </div>
     )
   } else {
-    return (
-      <div>
-        <Header />
-        <QuizPage state={state} dispatch={dispatch}/>
-        <Footer />
-      </div>
-    )
+      return (
+          <div>
+              <Header />
+              <HomepageMain state={state} dispatch={dispatch} />
+              <Footer />
+          </div>
+      )
   }
 }
 
