@@ -2,7 +2,7 @@ import React from 'react'
 
 const Summary = ({state, dispatch}) => {
     let relevants = state.results.filter(elem => elem.answer === "Yes" || elem.answer === "Unsure")
-    console.log(relevants)
+    let relevantsComplete = addLinks(state.resourcesLinks, relevants)
 
     if (relevants.length === 0) {
         return (
@@ -19,15 +19,29 @@ const Summary = ({state, dispatch}) => {
         return (
           <div className="summary">
             <p>
-             Based on your answers, you might benefit from talking to a lawyer about:
+              Based on your answers, you might benefit from talking to a lawyer about:
             </p>
             <ul className="results">
                 {relevants.map(elem => <li>{elem.statement}</li>)}
+            </ul>
+            <p>
+              Here are some resources that might help:
+            </p>
+            <ul className="links">
+                {relevantsComplete.map(elem => <li>Read about {elem.topic}</li>)}
             </ul>
           </div>
         )
     }
 }
 
+function addLinks(resourcesLinks, relevantResults){
+    relevantResults.forEach((result, index) => {
+        var linkElement = resourcesLinks.filter((link) => link.linkId === result.linkId)
+        relevantResults[index].url = linkElement[0].url
+        relevantResults[index].topic = linkElement[0].topic
+    })
+    return relevantResults
+}
 
 export default Summary

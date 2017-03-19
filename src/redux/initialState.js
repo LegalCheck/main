@@ -33,22 +33,22 @@ const initialState = {
     {id: 28, text: "Are you worried about how your child is being treated at school?", statement: "You are worried about how your child is being treated at school", category: 'Other', linkId: 15}
     ],
   results: [],
-  links: [
-      {linkId: 1, title: "Credit and debt", url: "http://communitylaw.org.nz/community-law-manual/chapter-13-credit-and-debt/what-this-chapter-covers-chapter-13/"},
-      {linkId: 2, title: "Consumer protection", url: "http://communitylaw.org.nz/community-law-manual/chapter-12-consumer-protection/what-this-chapter-covers-chapter-12/"},
-      {linkId: 3, title: "Court fines", url: "http://communitylaw.org.nz/community-law-manual/chapter-32-court-fines/what-this-chapter-covers-chapter-32/"},
-      {linkId: 4, title: "Tenancy and housing", url: "http://communitylaw.org.nz/community-law-manual/chapter-15-tenancy-and-housing/what-this-chapter-covers-chapter-15/"},
-      {linkId: 5, title: "Bond and tenancy", url: "https://www.tenancy.govt.nz/about-tenancy-services/contact-us/"},
-      {linkId: 6, title: "Neighbours", url: "http://communitylaw.org.nz/community-law-manual/chapter-11-neighbourhood-life/what-this-chapter-covers-chapter-11/"},
-      {linkId: 7, title: "Community and government housing", url: "http://communitylaw.org.nz/community-law-manual/chapter-15-tenancy-and-housing/social-housing-tenants-in-state-and-community-housing-chapter-15/"},
-      {linkId: 8, title: "Criminal law", url: "http://communitylaw.org.nz/community-law-manual/chapter-34-the-criminal-courts/what-this-chapter-covers-chapter-34/"},
-      {linkId: 9, title: "Dealing with Work and Income", url: "http://communitylaw.org.nz/community-law-manual/chapter-7-dealing-with-work-and-income/what-this-chapter-covers-chapter-7/"},
-      {linkId: 10, title: "Domestic violence", url: "http://communitylaw.org.nz/community-law-manual/chapter-29-domestic-violence/what-this-chapter-covers-chapter-29/"},
-      {linkId: 11, title: "Parents, guardians and caregivers", url: "http://communitylaw.org.nz/community-law-manual/chapter-27-parents-guardians-and-caregivers/what-this-chapter-covers-chapter-27/"},
-      {linkId: 12, title: "Child Youth and Family", url: "http://communitylaw.org.nz/community-law-manual/chapter-28-dealing-with-child-youth-and-family/what-this-chapter-covers-chapter-28/"},
-      {linkId: 13, title: "Personal relationships and the law", url: "http://communitylaw.org.nz/community-law-manual/chapter-26-adult-relationships/what-this-chapter-covers-chapter-26/"},
-      {linkId: 14, title: "Resolving employment problems", url: "http://communitylaw.org.nz/community-law-manual/chapter-18-resolving-employment-problems/what-this-chapter-covers-chapter-18/"},
-      {linkId: 15, title: "Student rights", url: "http://www.wclc.org.nz/student-rights-service/"}
+  resourcesLinks: [
+      {linkId: 1, topic: "Credit and debt", url: "http://communitylaw.org.nz/community-law-manual/chapter-13-credit-and-debt/what-this-chapter-covers-chapter-13/"},
+      {linkId: 2, topic: "Consumer protection", url: "http://communitylaw.org.nz/community-law-manual/chapter-12-consumer-protection/what-this-chapter-covers-chapter-12/"},
+      {linkId: 3, topic: "Court fines", url: "http://communitylaw.org.nz/community-law-manual/chapter-32-court-fines/what-this-chapter-covers-chapter-32/"},
+      {linkId: 4, topic: "Tenancy and housing", url: "http://communitylaw.org.nz/community-law-manual/chapter-15-tenancy-and-housing/what-this-chapter-covers-chapter-15/"},
+      {linkId: 5, topic: "Bond and tenancy", url: "https://www.tenancy.govt.nz/about-tenancy-services/contact-us/"},
+      {linkId: 6, topic: "Neighbours", url: "http://communitylaw.org.nz/community-law-manual/chapter-11-neighbourhood-life/what-this-chapter-covers-chapter-11/"},
+      {linkId: 7, topic: "Community and government housing", url: "http://communitylaw.org.nz/community-law-manual/chapter-15-tenancy-and-housing/social-housing-tenants-in-state-and-community-housing-chapter-15/"},
+      {linkId: 8, topic: "Criminal law", url: "http://communitylaw.org.nz/community-law-manual/chapter-34-the-criminal-courts/what-this-chapter-covers-chapter-34/"},
+      {linkId: 9, topic: "Dealing with Work and Income", url: "http://communitylaw.org.nz/community-law-manual/chapter-7-dealing-with-work-and-income/what-this-chapter-covers-chapter-7/"},
+      {linkId: 10, topic: "Domestic violence", url: "http://communitylaw.org.nz/community-law-manual/chapter-29-domestic-violence/what-this-chapter-covers-chapter-29/"},
+      {linkId: 11, topic: "Parents, guardians and caregivers", url: "http://communitylaw.org.nz/community-law-manual/chapter-27-parents-guardians-and-caregivers/what-this-chapter-covers-chapter-27/"},
+      {linkId: 12, topic: "Child Youth and Family", url: "http://communitylaw.org.nz/community-law-manual/chapter-28-dealing-with-child-youth-and-family/what-this-chapter-covers-chapter-28/"},
+      {linkId: 13, topic: "Personal relationships and the law", url: "http://communitylaw.org.nz/community-law-manual/chapter-26-adult-relationships/what-this-chapter-covers-chapter-26/"},
+      {linkId: 14, topic: "Resolving employment problems", url: "http://communitylaw.org.nz/community-law-manual/chapter-18-resolving-employment-problems/what-this-chapter-covers-chapter-18/"},
+      {linkId: 15, topic: "Student rights", url: "http://www.wclc.org.nz/student-rights-service/"}
   ]
 }
 
