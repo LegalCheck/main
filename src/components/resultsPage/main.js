@@ -1,7 +1,6 @@
 import React from 'react'
 import Options from './options'
 import Summary from './summary'
-import ProgressBar from '../progressBar'
 
 const SummaryPage = ({state, dispatch}) => (
   <div className="results">
