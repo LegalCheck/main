@@ -39,10 +39,12 @@ const Options = ({state, dispatch}) => {
         <div className="quizBottomNav">
           <div className="quizDivider"></div>
                 <input className="prevButton" type="button" name="navigate" value="Back" onClick={() => {
-                    var progress = getProgress('back')
+                      var progress = getProgress('back')
                       Progress(progress)
-                      if (state.quizPosition === 0) return
-                      else {
+                      if (state.quizPosition === 0) {
+                          dispatch({type: 'START_QUIZ'})
+                          dispatch({type: 'START_OVER'})                          
+                      } else {
                           dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
                           dispatch({type: 'NAVIGATE', payload: -1})
                       }
