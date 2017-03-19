@@ -21,14 +21,14 @@ const Summary = ({state, dispatch}) => {
             <p>
               Based on your answers, you might benefit from talking to a lawyer about:
             </p>
-            <ul className="results">
+            <ul className="resultsStatements">
                 {relevants.map(elem => <li>{elem.statement}</li>)}
             </ul>
             <p>
               Here are some resources that might help:
             </p>
-            <ul className="links">
-                {relevantLinks.map(elem => <li>Read about <a href={elem.url} target="_blank">{elem.topic}</a></li>)}
+            <ul className="resultsLinkList">
+                {relevantLinks.map(elem => <li className="resultsLink"><a href={elem.url} target="_blank">Read about {elem.topic}</a></li>)}
             </ul>
           </div>
         )

@@ -155,7 +155,7 @@ input[type=button] {
 
 /**************** PROGRESS BAR *********************/
 .progress-bar {
-  width: 80%;
+  width: 100%;
   color: black;
   height: 80px;
   position:relative;
@@ -211,7 +211,43 @@ input[type=button] {
 
 /**************** RESULTS *********************/
 .results {
-	padding: 75px 10% 70px 10%;	
+	font-size: 20px;
+	padding: 75px 10% 70px 10%;
+	font-family: 'OpenSans-Light', sans-serif;
+}
+
+.resultsStatements {
+	color: #65CCAA;
+	font-size: 14px;
+}
+
+.resultsLinkList {
+	padding: 0;
+}
+
+.resultsLink {
+	font-size: 15px;
+	margin: 5px 0 5px 0;
+    list-style-type: none;
+	border: solid 3px #A8E2CD;
+	padding: 5px 10px 5px 10px;
+}
+
+.resultsButton {
+	margin: 5px 0 5px 0;
+	text-transform: uppercase;
+}
+
+.resultFindButton {
+	background: #7EFFD4;
+}
+
+.resultPdfButton {
+	background: #A8E2CD;
+}
+
+.resultStartButton {
+	background: #65CCAA;
 }
 
 /**************** FOOTER *********************/
