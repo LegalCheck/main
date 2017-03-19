@@ -8,7 +8,7 @@ const Summary = ({state, dispatch}) => {
         return (
             <div className="summary">
               <p>
-               Based on your answers, it seems like you don't need to talk to a lawyer about some of the common issues facing New Zealanders. :)
+               Based on your answers, it seems like you dont need to talk to a lawyer about some of the common issues facing New Zealanders. :)
               </p>
               <p>
                Find out more about the services of <a href="http://communitylaw.org.nz/our-law-centres/" target="_blank">Community Law</a>.
