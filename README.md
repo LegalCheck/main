@@ -11,5 +11,11 @@ The legal checkup site - Can the Law Help Me? is created using React framework w
 
 [See it live here!](https://legalcheck.github.io/main/)
 
-[Community Law - Wellington & Hutt Valley](http://communitylaw.org.nz/)
+This project is an initiative of [Community Law - Wellington & Hutt Valley](http://communitylaw.org.nz/centre/wellington-hutt-valley/).
+
+**Supplementary material**:
+* [Current checklist (PDF)](./resources/HealthCheck_current_CommunityLawNZ.pdf)
+* [Table of questions, results, and resources](./resources/QuestionsAndResults.md)
+* [Design images](./resources/designs.md)
+* [List of useful links](./resources/useful_links.md)
 
