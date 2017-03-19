@@ -28,7 +28,7 @@ const Summary = ({state, dispatch}) => {
               Here are some resources that might help:
             </p>
             <ul className="links">
-                {relevantsComplete.map(elem => <li>Read about {elem.topic}</li>)}
+                {relevantsComplete.map(elem => <li>Read about <a href={elem.url} target="_blank">{elem.topic}</a></li>)}
             </ul>
           </div>
         )
