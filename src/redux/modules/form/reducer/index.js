@@ -18,11 +18,9 @@ const reducer = function (state = initialState, action = {}) {
   const {
     payload: {
       answer,
-      answers,
+      categories,
       categoryId,
-      formId,
       questionId,
-      questions,
       isFetching,
       formFetched,
       error
@@ -42,7 +40,7 @@ const reducer = function (state = initialState, action = {}) {
         ...state,
         isFetching,
         formFetched,
-        questions
+        categories
       }
     case FETCH_FORM_FAILED:
       return {
@@ -52,16 +50,12 @@ const reducer = function (state = initialState, action = {}) {
         error
       }
     case UPDATE_ANSWER:
-      console.log(UPDATE_ANSWER, formId, categoryId, questionId, answer)
       return {
         ...state,
-        answers: updateAnswers(state.answers, formId, categoryId, questionId, answer)
+        categories: updateAnswers(state.categories, categoryId, questionId, answer)
       }
     case UPDATE_ANSWER_FULFILLED:
-      return {
-        ...state,
-        answers
-      }
+      return state
     case UPDATE_ANSWER_FAILED:
       return {
         ...state,

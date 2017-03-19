@@ -16,7 +16,7 @@ class CheckUp extends Component {
   }
 
   render () {
-    const { form, formId, isLoaded } = this.props
+    const { answered, form, formId, isLoaded, status, total } = this.props
 
     const controls = map(
       form,
@@ -28,6 +28,7 @@ class CheckUp extends Component {
     return isLoaded
       ? (
         <div>
+          <p>Answered {answered} out of {total}: {status}</p>
           <form>
             {controls}
           </form>
@@ -41,10 +42,13 @@ class CheckUp extends Component {
 }
 
 CheckUp.propTypes = {
+  answered: PropTypes.number,
   form: PropTypes.array,
   formId: PropTypes.string.isRequired,
   isLoaded: PropTypes.bool,
-  loadForm: PropTypes.func.isRequired
+  loadForm: PropTypes.func.isRequired,
+  status: PropTypes.string,
+  total: PropTypes.number
 }
 
 const mapStateToProps = (state, props) => {
@@ -53,7 +57,8 @@ const mapStateToProps = (state, props) => {
   return {
     form: selectors.getForm(state) || [],
     formId,
-    isLoaded: selectors.isLoaded(state)
+    isLoaded: selectors.isLoaded(state),
+    ...selectors.progress(state)
   }
 }
 

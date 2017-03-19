@@ -61,7 +61,7 @@ function sendResults (req, res, next) {
       html: '<b>This is the body of the email right here.</b>'
   }
 
-  transporter.sendMail(mailOptions, function (error, info) {
+  transporter.sendResults(mailOptions, function (error, info) {
     if (error) {
         console.log(error)
         res.send(400)
@@ -106,30 +106,68 @@ function mapForm (layout, categories, questions) {
 }
 
 function startCheckup (req, res, next) {
-  if (!rdb.get('responses').find({ id: req.params.formId }).value()) {
-    rdb.get('responses').push({
-      id: req.params.formId,
-      responses: []
-    }).write()
+  const form = rdb.get('responses').find({ id: req.params.formId }).value()
+
+  if (form) {
+    res.send(form.categories)
+    return next()
   }
 
   const categories = fdb.get('categories').value()
   const layout = fdb.get('layout').value()
   const questions = fdb.get('questions').value()
-  const form = mapForm(layout, categories, questions)
+  const newForm = mapForm(layout, categories, questions)
 
-  res.send(form)
-
+  rdb.get('responses').push({
+    id: req.params.formId,
+    categories: newForm
+  }).write()
+  res.send(newForm)
   return next()
 }
 
 function updateAnswer (req, res, next) {
+  const form = rdb.get('responses').find({ id: req.params.formId }).value()
+
+  const categories = _.map(
+    form.categories,
+    function (category) {
+      return (category.id === req.params.categoryId)
+        ? _.assign(
+          category,
+          {
+            questions: _.map(
+              category.questions,
+              function (question) {
+                return (question.id === req.params.questionId)
+                  ? _.assign(
+                    question,
+                    {
+                      answer: req.params.answer
+                    }
+                  )
+                  : question
+              }
+            )
+          }
+        )
+        : category
+    }
+  )
+
+  rdb
+    .get('responses')
+    .find({ id: req.params.formId })
+    .assign({ categories: categories })
+    .write()
+
+  res.send(204)
 
   return next()
 }
 
 server.put('/forms/:formId', startCheckup)
-server.patch('/forms/:formId', updateAnswer)
+server.put('/forms/:formId/:categoryId/:questionId', updateAnswer)
 server.get('/mailer', sendResults)
 
 server.listen(3001)

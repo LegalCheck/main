@@ -18,12 +18,12 @@ export const fetchForm = function (formId) {
   }
 }
 
-export const fetchFormFulfilled = function (questions) {
+export const fetchFormFulfilled = function (categories) {
   return {
     type: FETCH_FORM_FULFILLED,
     payload: {
       isFetching: false,
-      questions,
+      categories,
       formFetched: true
     }
   }
@@ -40,15 +40,10 @@ export const fetchFormFailed = function (error) {
   }
 }
 
-export const updateAnswer = function (formId, categoryId, questionId, answer) {
+export const updateAnswer = function (payload) {
   return {
     type: UPDATE_ANSWER,
-    payload: {
-      formId: formId || 'xyz',
-      categoryId,
-      questionId,
-      answer
-    }
+    payload
   }
 }
 

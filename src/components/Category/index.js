@@ -39,7 +39,9 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = (dispatch, { formId }) => {
   return {
     handleClick (categoryId, questionId, answer) {
-      dispatch(actions.updateAnswer(formId, categoryId, questionId, answer))
+      dispatch(actions.updateAnswer({
+        formId, categoryId, questionId, answer
+      }))
     }
   }
 }

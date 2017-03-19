@@ -27,19 +27,13 @@ export const fetchFormEpic = function (action$) {
 
 export const updateAnswersEpic = function (action$) {
   return action$.ofType(UPDATE_ANSWER)
-    .mergeMap(({ payload }) =>
-        Observable.ajax.patch(
-          `http://localhost:3001/forms/${payload.formId}`,
-          {
-            response: {
-              [payload.question]: payload.answer
-            }
-          },
-          {
-            'Content-Type': 'application/json'
-          }
-        )
-          .map(response => updateAnswerFulfilled(response))
-          .catch(error => Observable.of(updateAnswerFailed(error)))
-    )
+    .mergeMap(({ payload: p }) =>
+      Observable.ajax.put(
+        `http://localhost:3001/forms/${p.formId}/${p.categoryId}/${p.questionId}`,
+        { answer: p.answer },
+        { 'Content-Type': 'application/json' }
+      )
+        .map(response => updateAnswerFulfilled(response))
+        .catch(error => Observable.of(updateAnswerFailed(error)))
+  )
 }
