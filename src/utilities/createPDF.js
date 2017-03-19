@@ -1,3 +1,5 @@
+let jsPDF = require('jspdf')
+
 function createPDF(state) {
   let answers = state.map(elem => {
     return {
@@ -6,6 +8,10 @@ function createPDF(state) {
     }
   })
   console.log(answers)
+  let doc = new jsPDF()
+
+  doc.text('tsting')
+  doc.save('answers.pdf')
 }
 
 module.exports = createPDF
