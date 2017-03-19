@@ -22,7 +22,7 @@ const Options = ({state, dispatch}) => {
                         Progress(progress)
                         navigate(state, dispatch, answerValue)
                     }}>
-                <img className="answerImage" src="images/yes.svg"/>
+                <img className="answerImage" src="images/yes.svg" alt="Yes icon"/>
                 <input type="button" name="answer" value="Yes"/>
               </div>
               <div className="quizAnswerButton" onClick={() => {
@@ -31,7 +31,7 @@ const Options = ({state, dispatch}) => {
                         Progress(progress)
                         navigate(state, dispatch, answerValue)
                     }}>
-                <img className="answerImage" src="images/unsure.svg"/>
+                <img className="answerImage" src="images/unsure.svg" alt="Unsure icon"/>
                 <input type="button" name="answer" value="Unsure"/>
               </div>
               <div className="quizAnswerButton" onClick={() => {
@@ -40,7 +40,7 @@ const Options = ({state, dispatch}) => {
                         Progress(progress)
                         navigate(state, dispatch, answerValue)
                     }}>
-                <img className="answerImage" src="images/no.svg"/>
+                <img className="answerImage" src="images/no.svg" alt="No icon"/>
                 <input type="button" name="answer" value="No"/>
               </div>
             </div>
@@ -52,7 +52,7 @@ const Options = ({state, dispatch}) => {
                       Progress(progress)
                       if (state.quizPosition === 0) {
                           dispatch({type: 'START_QUIZ'})
-                          dispatch({type: 'START_OVER'})                          
+                          dispatch({type: 'START_OVER'})
                       } else {
                           dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
                           dispatch({type: 'NAVIGATE', payload: -1})
