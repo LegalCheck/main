@@ -66,10 +66,11 @@ const Options = ({state, dispatch}) => {
 }
 
 function navigate(state, dispatch, answerValue){
-    dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
     if (state.quizPosition === state.questions.length - 1) {
+        dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
         dispatch({type: 'FINISH_QUIZ'})
     } else {
+        dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
         dispatch({type: 'NAVIGATE', payload: 1})
     }
 }
