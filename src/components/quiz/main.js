@@ -4,14 +4,14 @@ import QuestionText from './question'
 import ProgressBar from '../progressBar'
 import Progress from '../../utilities/progress'
 
-const QuizPage = ({state, dispatch}) => {
-  return (
-    <div>
-      <ProgressBar state={state} dispatch={dispatch}/>
-      <QuestionText state={state} dispatch={dispatch}/>
-      <Options state={state} dispatch={dispatch}/>
+const QuizPage = ({state, dispatch}) => (
+  <div className="quiz">
+    <ProgressBar state={state} dispatch={dispatch}/>
+    <div className="quizQAContainer">
+	    <QuestionText state={state} dispatch={dispatch}/>
+	    <Options state={state} dispatch={dispatch}/>
     </div>
-  )
-}
+  </div>
+)
 
 export default QuizPage
