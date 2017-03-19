@@ -14,6 +14,7 @@
 
 h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
+  letter-spacing: 1px;
 }
 
 html {
@@ -74,9 +75,11 @@ header {
 }
 
 .homeTitle {
-	font-size: 45px;	
+	font-size: 45px;
     line-height: 42px;
 	font-family: 'OpenSans-Light', sans-serif;
+  letter-spacing: 2px;
+  margin-top: 5px;
 }
 
 .homeDescription {
@@ -89,7 +92,7 @@ header {
 }
 
 .startButton {
-	border:none;
+	border: solid #CAFFEE 3px;
 	float: right;
 	color: #FFFFFF;
 	font-size: 40px;
@@ -97,8 +100,9 @@ header {
 	background: #65CCAA;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-	padding: 20px 30px 20px 30px;
+	padding: 15px 25px 15px 25px;
 	font-family: 'OpenSans-Light', sans-serif;
+  border-radius: 8px;
 }
 
 .homeCLLogo {
@@ -150,7 +154,7 @@ input[type=button] {
     padding:5px 15px;
     background-repeat:no-repeat;
     background-color: Transparent;
-	font-family: 'OpenSans-Light', sans-serif;	
+	font-family: 'OpenSans-Light', sans-serif;
 }
 
 /**************** PROGRESS BAR *********************/
