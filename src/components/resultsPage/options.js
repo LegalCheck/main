@@ -8,7 +8,7 @@ const Options = ({state, dispatch}) => {
     		</div>
 
         	<div className="resultPdfButton resultsButton">
-		        <input type="button" name="save" value="Save results as PDF" onClick={() => window.print()}/>
+		        <input type="button" name="save" value="Print Results" onClick={() => window.print()}/>
 	        </div>
 
         	<div className="resultStartButton resultsButton">
