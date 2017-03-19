@@ -2,7 +2,7 @@ import React from 'react'
 
 const Summary = ({state, dispatch}) => {
     let relevants = state.results.filter(elem => elem.answer === "Yes" || elem.answer === "Unsure")
-    let relevantLinks = addLinks(state.resourcesLinks, relevants)
+    let theLinks = addLinks(state.resourcesLinks, relevants)
 
     if (relevants.length === 0) {
         return (
@@ -28,7 +28,7 @@ const Summary = ({state, dispatch}) => {
               Here are some resources that might help:
             </p>
             <ul className="resultsLinkList">
-                {relevantLinks.map(elem => <li className="resultsLink"><a href={elem.url} target="_blank">Read about {elem.topic}</a></li>)}
+                {theLinks.map(elem => <li className="resultsLink"><a href={elem.url} target="_blank">Read about {elem.topic}</a></li>)}
             </ul>
           </div>
         )
@@ -39,7 +39,7 @@ function addLinks(resourcesLinks, relevantResults){
     var relevantLinks = []
     relevantResults.forEach((result, index) => {
         var linkElement = resourcesLinks.filter((link) => link.linkId === result.linkId)
-        if (!relevantLinks.includes(linkElement[0])){
+        if (linkElement.length !== 0 && !relevantLinks.includes(linkElement[0])){
             relevantLinks.push(linkElement[0])
         }
     })
