@@ -8,7 +8,6 @@ import Popup from './Popup'
 
 
 const App = ({state, dispatch}) => {
-  console.log('state in the component', state)
   if (state.startedQuiz && state.finishedQuiz === false) {
       return (
           <div>

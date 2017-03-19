@@ -6,9 +6,9 @@ const Options = ({state, dispatch}) => {
         	<div className="resultFindButton resultsButton">
         		<a href="http://communitylaw.org.nz/our-law-centres/" target="_blank"><input type="button" name="contact" value="Find My Local Community Law"/></a>
     		</div>
-    		
+
         	<div className="resultPdfButton resultsButton">
-		        <input type="button" name="save" value="Save results as PDF" onClick={() => alert("PDF save function will happen here!")}/>
+		        <input type="button" name="save" value="Print Results" onClick={() => window.print()}/>
 	        </div>
 
         	<div className="resultStartButton resultsButton">
