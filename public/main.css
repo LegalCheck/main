@@ -133,7 +133,14 @@ header {
 .quizAnswerButton {
     display: flex;
 	cursor: pointer;
+	align-items: center;
+    margin: 0 10px 0 10px;
     flex-direction: column;
+}
+
+.answerImage {
+	width: 40px;
+	height: 40px;
 }
 
 .quizBottomNav {
@@ -160,7 +167,7 @@ input[type=button] {
     border:0 none;
     cursor:pointer;
     font-size: 18px;
-    padding:5px 15px;
+    margin: 10px 0 0 0;
     background-repeat:no-repeat;
     background-color: Transparent;
 	font-family: 'OpenSans-Light', sans-serif;	
