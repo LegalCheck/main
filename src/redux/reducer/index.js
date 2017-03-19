@@ -14,7 +14,13 @@ const reducer = (state = initialState, { type, payload = {} }) => {
       if (existingAnswer.length !== 0) {
         newState.results[newState.quizPosition].answer = payload
       } else {
-        newState.results.push({id: newState.quizPosition +1, answer: payload, statement: newState.questions[newState.quizPosition].statement})
+        var newAnswer = {
+            id: newState.quizPosition +1,
+            answer: payload,
+            statement: newState.questions[newState.quizPosition].statement,
+            linkId: newState.questions[newState.quizPosition].linkId
+        }
+        newState.results.push(newAnswer)
       }
       return newState
       break;
