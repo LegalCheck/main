@@ -1,21 +1,27 @@
 let jsPDF = require('jspdf')
 
-function createPDF(state) {
-  let answers = state.map(elem => {
+function createPDF(results) {
+  let answers = results.map(elem => {
     return {
       "issue": elem.statement,
       "answer": elem.answer
     }
   })
-  console.log(answers)
   let doc = new jsPDF("portrait")
 
-  doc.setFontSize(20)
-  doc.text(15, 20, "Summary of answers from 'Can the Law Help Me?'")
-  doc.setFontSize(12)
-  doc.setLineWidth(150)
-  doc.text(15, 32, "Testing!!!")
-  doc.text(15, 52, JSON.stringify(answers))
+    var lineHeight = 10;
+    var currentHeight = 65;
+
+    doc.text("Summary of answers from 'Can the Law Help Me?'", 15, 55)
+
+    doc.setFontSize(15)
+
+    answers.forEach(function (element) {
+      doc.text(element.issue, 20, currentHeight)
+      currentHeight += 10
+      doc.text(element.answer, 20, currentHeight)
+      currentHeight += 10
+    })
   doc.save('answers.pdf')
 }
 
