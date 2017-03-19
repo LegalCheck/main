@@ -92,6 +92,7 @@ header {
 	border:none;
 	float: right;
 	color: #FFFFFF;
+	cursor: pointer;
 	font-size: 40px;
     box-shadow: none;
 	background: #65CCAA;
@@ -121,6 +122,18 @@ header {
 .quizQAContainer {
 	text-align: center;
 	margin: 70px 0 0 0;
+}
+
+.quizAnswerContainer {
+	display: flex;
+	margin: 25px 0 0 0;
+	justify-content: center;
+}
+
+.quizAnswerButton {
+    display: flex;
+	cursor: pointer;
+    flex-direction: column;
 }
 
 .quizBottomNav {
