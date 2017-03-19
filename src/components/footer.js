@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Footer = () => (
-  <footer>
-    <a className="footerCopyright">Copyright</a>
-  </footer>
-)
+const Footer = ({state, dispatch}) => {
+  const copyrightClass = state.showPopup ? 'hidden' : 'footerCopyright'
+  return (
+    <footer>
+      <button className={copyrightClass} onClick={() => dispatch({type: 'SHOW_HIDE_COPYRIGHT'})}>Copyright</button>
+    </footer>
+  )
+}
 
 export default Footer

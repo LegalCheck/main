@@ -2,6 +2,7 @@ const initialState = {
   startedQuiz: false,
   finishedQuiz: false,
   quizPosition: 0,
+  showPopup: false,
   questions: [
     {id: 1, text: "Is anyone chasing you for money?", statement: "Someone is chasing you for money", category: "Money", linkId: 1},
     {id: 2, text: "Do you have payments due or unpaid accounts? E.g. phone / Work and Income / Cash converters / power bills / car loan / gyms", statement: "You have payments due or unpaid accounts", category: "Money", linkId: 1},
