@@ -74,7 +74,7 @@ header {
 }
 
 .homeTitle {
-	font-size: 45px;	
+	font-size: 45px;
     line-height: 42px;
 	font-family: 'OpenSans-Light', sans-serif;
 }
@@ -176,7 +176,7 @@ input[type=button] {
     margin: 10px 0 0 0;
     background-repeat:no-repeat;
     background-color: Transparent;
-	font-family: 'OpenSans-Light', sans-serif;	
+	font-family: 'OpenSans-Light', sans-serif;
 }
 
 /**************** PROGRESS BAR *********************/
@@ -287,5 +287,31 @@ footer {
 }
 
 .footerCopyright {
-	font-size: 12px;
+	font-size: 16px;
+  border:none;
+  color: #FFFFFF;
+  cursor: pointer;
+    box-shadow: none;
+  background: #65CCAA;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    padding: 5px 10px;
+  font-family: 'OpenSans-Light', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: white;
+    padding: 75px 5px;
+}
+
+.copyright-close {
+  cursor: pointer;
 }
