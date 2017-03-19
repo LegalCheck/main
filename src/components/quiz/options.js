@@ -23,8 +23,10 @@ const Options = ({state, dispatch}) => {
                         navigate(state, dispatch, answerValue)
                     }}/>
             </div>
-            <div>
-                <input type="button" name="navigate" value="Back" onClick={() => {
+            
+        <div className="quizBottomNav">
+          <div className="quizDivider"></div>
+                <input className="prevButton" type="button" name="navigate" value="Back" onClick={() => {
                       Progress(progress)
                       if (state.quizPosition === 0) return
                       else {
@@ -33,7 +35,7 @@ const Options = ({state, dispatch}) => {
                       }
                   }
                 }/>
-                <input type="button" name="navigate" value="Next" onClick={() => {
+                <input className="nextButton" type="button" name="navigate" value="Next" onClick={() => {
                       Progress(progress)
                       if (state.quizPosition === state.questions.length - 1) {
                           dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
