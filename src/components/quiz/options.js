@@ -15,34 +15,45 @@ const Options = ({state, dispatch}) => {
     let answerValue = "skip"
     return (
         <div>
-            <div>
-                <input type="button" name="answer" value="Yes" onClick={() => {
+            <div className="quizAnswerContainer">
+              <div className="quizAnswerButton" onClick={() => {
                         answerValue = "Yes"
                         var progress = getProgress('forward')
                         Progress(progress)
                         navigate(state, dispatch, answerValue)
-                    }}/>
-                <input type="button" name="answer" value="Unsure" onClick={() => {
+                    }}>
+                <img className="answerImage" src="images/yes.svg" alt="Yes icon"/>
+                <input type="button" name="answer" value="Yes"/>
+              </div>
+              <div className="quizAnswerButton" onClick={() => {
                         answerValue = "Unsure"
                         var progress = getProgress('forward')
                         Progress(progress)
                         navigate(state, dispatch, answerValue)
-                    }}/>
-                <input type="button" name="answer" value="No" onClick={() => {
+                    }}>
+                <img className="answerImage" src="images/unsure.svg" alt="Unsure icon"/>
+                <input type="button" name="answer" value="Unsure"/>
+              </div>
+              <div className="quizAnswerButton" onClick={() => {
                         answerValue = "No"
                         var progress = getProgress('forward')
                         Progress(progress)
                         navigate(state, dispatch, answerValue)
-                    }}/>
+                    }}>
+                <img className="answerImage" src="images/no.svg" alt="No icon"/>
+                <input type="button" name="answer" value="No"/>
+              </div>
             </div>
 
         <div className="quizBottomNav">
           <div className="quizDivider"></div>
                 <input className="prevButton" type="button" name="navigate" value="Back" onClick={() => {
-                    var progress = getProgress('back')
+                      var progress = getProgress('back')
                       Progress(progress)
-                      if (state.quizPosition === 0) return
-                      else {
+                      if (state.quizPosition === 0) {
+                          dispatch({type: 'START_QUIZ'})
+                          dispatch({type: 'START_OVER'})
+                      } else {
                           dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
                           dispatch({type: 'NAVIGATE', payload: -1})
                       }

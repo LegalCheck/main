@@ -1,5 +1,4 @@
 import React from 'react'
-import Progress from '../../utilities/progress'
 
 const HomepageButtons = ({dispatch}) => (
   <div className="buttonContainer">
