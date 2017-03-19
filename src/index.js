@@ -19,4 +19,9 @@ store.subscribe( () => {
   )
 })
 
+
+if (window.performance.navigation.type === 1){
+    store.dispatch({type: 'START_OVER'})
+}
+
 store.dispatch({type: 'INIT'})
