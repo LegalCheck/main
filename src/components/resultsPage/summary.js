@@ -36,12 +36,14 @@ const Summary = ({state, dispatch}) => {
 }
 
 function addLinks(resourcesLinks, relevantResults){
+    var relevantLinks = []
     relevantResults.forEach((result, index) => {
         var linkElement = resourcesLinks.filter((link) => link.linkId === result.linkId)
-        relevantResults[index].url = linkElement[0].url
-        relevantResults[index].topic = linkElement[0].topic
+        if (!relevantLinks.includes(linkElement[0])){
+            relevantLinks.push(linkElement[0])
+        }
     })
-    return relevantResults
+    return relevantLinks
 }
 
 export default Summary
