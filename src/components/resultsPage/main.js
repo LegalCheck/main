@@ -4,8 +4,7 @@ import Summary from './summary'
 import ProgressBar from '../progressBar'
 
 const SummaryPage = ({state, dispatch}) => (
-  <div>
-    <ProgressBar state={state} dispatch={dispatch}/>
+  <div className="results">
     <Summary state={state} dispatch={dispatch}/>
     <Options state={state} dispatch={dispatch}/>
   </div>
