@@ -6,64 +6,58 @@ const Options = ({state, dispatch}) => {
     let answerValue = "skip"
     return (
         <div>
-        <div>
-        <input type="button" name="answer" value="Yes" onClick={() => {
-                answerValue = "Yes"
-                Progress(progress)
-                dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                if (state.quizPosition === state.questions.length - 1) {
-                    dispatch({type: 'FINISH_QUIZ'})
-                } else {
-                    dispatch({type: 'NAVIGATE', payload: 1})
-                }
-            }}/>
-        <input type="button" name="answer" value="Unsure" onClick={() => {
-                answerValue = "Unsure"
-                Progress(progress)
-                dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                if (state.quizPosition === state.questions.length - 1) {
-                    dispatch({type: 'FINISH_QUIZ'})
-                } else {
-                    dispatch({type: 'NAVIGATE', payload: 1})
-                }
-            }}/>
-        <input type="button" name="answer" value="No" onClick={() => {
-                answerValue = "No"
-                Progress(progress)
-                dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                if (state.quizPosition === state.questions.length - 1) {
-                    dispatch({type: 'FINISH_QUIZ'})
-                } else {
-                    dispatch({type: 'NAVIGATE', payload: 1})
-                }
-            }}/>
-        </div>
+            <div>
+                <input type="button" name="answer" value="Yes" onClick={() => {
+                        answerValue = "Yes"
+                        Progress(progress)
+                        navigate(state, dispatch, answerValue)
+                    }}/>
+                <input type="button" name="answer" value="Unsure" onClick={() => {
+                        answerValue = "Unsure"
+                        Progress(progress)
+                        navigate(state, dispatch, answerValue)
+                    }}/>
+                <input type="button" name="answer" value="No" onClick={() => {
+                        answerValue = "No"
+                        Progress(progress)
+                        navigate(state, dispatch, answerValue)
+                    }}/>
+            </div>
+            
         <div className="quizBottomNav">
           <div className="quizDivider"></div>
-          <input className="prevButton" type="button" name="navigate" value="BACK" onClick={() => {
-                Progress(progress)
-                if (state.quizPosition === 0) return
-                else {
-                    dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                    dispatch({type: 'NAVIGATE', payload: -1})
-                }
-            }
-          }/>
-          <input className="nextButton" type="button" name="navigate" value="NEXT" onClick={() => {
-                Progress(progress)
-                if (state.quizPosition === state.questions.length - 1) {
-                    dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                    dispatch({type: 'FINISH_QUIZ'})
-                } else {
-                    dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                    dispatch({type: 'NAVIGATE', payload: 1})
-                }
-            }
-          }/>
-        </div>
+                <input className="prevButton" type="button" name="navigate" value="Back" onClick={() => {
+                      Progress(progress)
+                      if (state.quizPosition === 0) return
+                      else {
+                          dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
+                          dispatch({type: 'NAVIGATE', payload: -1})
+                      }
+                  }
+                }/>
+                <input className="nextButton" type="button" name="navigate" value="Next" onClick={() => {
+                      Progress(progress)
+                      if (state.quizPosition === state.questions.length - 1) {
+                          dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
+                          dispatch({type: 'FINISH_QUIZ'})
+                      } else {
+                          dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
+                          dispatch({type: 'NAVIGATE', payload: 1})
+                      }
+                  }
+                }/>
+            </div>
         </div>
     )
 }
 
+function navigate(state, dispatch, answerValue){
+    dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
+    if (state.quizPosition === state.questions.length - 1) {
+        dispatch({type: 'FINISH_QUIZ'})
+    } else {
+        dispatch({type: 'NAVIGATE', payload: 1})
+    }
+}
 
 export default Options
