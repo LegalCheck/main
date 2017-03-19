@@ -15,25 +15,34 @@ const Options = ({state, dispatch}) => {
     let answerValue = "skip"
     return (
         <div>
-            <div>
-                <input type="button" name="answer" value="Yes" onClick={() => {
+            <div className="quizAnswerContainer">
+              <div className="quizAnswerButton" onClick={() => {
                         answerValue = "Yes"
                         var progress = getProgress('forward')
                         Progress(progress)
                         navigate(state, dispatch, answerValue)
-                    }}/>
-                <input type="button" name="answer" value="Unsure" onClick={() => {
+                    }}>
+                <img className="answerImage" src="images/yes.svg"/>
+                <input type="button" name="answer" value="Yes"/>
+              </div>
+              <div className="quizAnswerButton" onClick={() => {
                         answerValue = "Unsure"
                         var progress = getProgress('forward')
                         Progress(progress)
                         navigate(state, dispatch, answerValue)
-                    }}/>
-                <input type="button" name="answer" value="No" onClick={() => {
+                    }}>
+                <img className="answerImage" src="images/unsure.svg"/>
+                <input type="button" name="answer" value="Unsure"/>
+              </div>
+              <div className="quizAnswerButton" onClick={() => {
                         answerValue = "No"
                         var progress = getProgress('forward')
                         Progress(progress)
                         navigate(state, dispatch, answerValue)
-                    }}/>
+                    }}>
+                <img className="answerImage" src="images/no.svg"/>
+                <input type="button" name="answer" value="No"/>
+              </div>
             </div>
 
         <div className="quizBottomNav">
