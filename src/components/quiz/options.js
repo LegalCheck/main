@@ -38,27 +38,28 @@ const Options = ({state, dispatch}) => {
                 }
             }}/>
         </div>
-        <div>
-        <input type="button" name="navigate" value="Back" onClick={() => {
-              Progress(progress)
-              if (state.quizPosition === 0) return
-              else {
-                  dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                  dispatch({type: 'NAVIGATE', payload: -1})
-              }
-          }
-        }/>
-        <input type="button" name="navigate" value="Next" onClick={() => {
-              Progress(progress)
-              if (state.quizPosition === state.questions.length - 1) {
-                  dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                  dispatch({type: 'FINISH_QUIZ'})
-              } else {
-                  dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
-                  dispatch({type: 'NAVIGATE', payload: 1})
-              }
-          }
-        }/>
+        <div className="quizBottomNav">
+          <div className="quizDivider"></div>
+          <input className="prevButton" type="button" name="navigate" value="BACK" onClick={() => {
+                Progress(progress)
+                if (state.quizPosition === 0) return
+                else {
+                    dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
+                    dispatch({type: 'NAVIGATE', payload: -1})
+                }
+            }
+          }/>
+          <input className="nextButton" type="button" name="navigate" value="NEXT" onClick={() => {
+                Progress(progress)
+                if (state.quizPosition === state.questions.length - 1) {
+                    dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
+                    dispatch({type: 'FINISH_QUIZ'})
+                } else {
+                    dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
+                    dispatch({type: 'NAVIGATE', payload: 1})
+                }
+            }
+          }/>
         </div>
         </div>
     )
