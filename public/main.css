@@ -202,6 +202,12 @@ input[type=button] {
   padding: 8px 15px 8px 15px;
 }
 
+
+/**************** RESULTS *********************/
+.results {
+	padding: 75px 10% 70px 10%;	
+}
+
 /**************** FOOTER *********************/
 footer {
 	left: 0;
