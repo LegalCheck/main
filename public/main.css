@@ -125,15 +125,28 @@ header {
 }
 
 .quizAnswerContainer {
+	display: -webkit-box;
 	display: flex;
 	margin: 25px 0 0 0;
-	justify-content: center;
+	-webkit-box-pack: center;
+	        justify-content: center;
 }
 
 .quizAnswerButton {
+    display: -webkit-box;
     display: flex;
 	cursor: pointer;
-    flex-direction: column;
+	-webkit-box-align: center;
+	        align-items: center;
+    margin: 0 10px 0 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+}
+
+.answerImage {
+	width: 40px;
+	height: 40px;
 }
 
 .quizBottomNav {
@@ -160,7 +173,7 @@ input[type=button] {
     border:0 none;
     cursor:pointer;
     font-size: 18px;
-    padding:5px 15px;
+    margin: 10px 0 0 0;
     background-repeat:no-repeat;
     background-color: Transparent;
 	font-family: 'OpenSans-Light', sans-serif;	
@@ -172,8 +185,7 @@ input[type=button] {
   color: black;
   height: 80px;
   position:relative;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
 
 .line {
