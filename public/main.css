@@ -125,17 +125,23 @@ header {
 }
 
 .quizAnswerContainer {
+	display: -webkit-box;
 	display: flex;
 	margin: 25px 0 0 0;
-	justify-content: center;
+	-webkit-box-pack: center;
+	        justify-content: center;
 }
 
 .quizAnswerButton {
+    display: -webkit-box;
     display: flex;
 	cursor: pointer;
-	align-items: center;
+	-webkit-box-align: center;
+	        align-items: center;
     margin: 0 10px 0 10px;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
 }
 
 .answerImage {
@@ -179,8 +185,7 @@ input[type=button] {
   color: black;
   height: 80px;
   position:relative;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
 
 .line {
