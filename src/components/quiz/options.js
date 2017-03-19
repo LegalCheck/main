@@ -49,7 +49,7 @@ const Options = ({state, dispatch}) => {
                   }
                 }/>
                 <input className="nextButton" type="button" name="navigate" value="Next" onClick={() => {
-                    var progress = getProgress('forward')
+                      var progress = getProgress('forward')
                       Progress(progress)
                       if (state.quizPosition === state.questions.length - 1) {
                           dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
