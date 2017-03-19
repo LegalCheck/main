@@ -9,6 +9,7 @@ const Options = ({state, dispatch}) => {
         <div>
         <input type="button" name="answer" value="Yes" onClick={() => {
                 answerValue = "Yes"
+                Progress(progress)
                 dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
                 if (state.quizPosition === state.questions.length - 1) {
                     dispatch({type: 'FINISH_QUIZ'})
@@ -18,6 +19,7 @@ const Options = ({state, dispatch}) => {
             }}/>
         <input type="button" name="answer" value="Unsure" onClick={() => {
                 answerValue = "Unsure"
+                Progress(progress)
                 dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
                 if (state.quizPosition === state.questions.length - 1) {
                     dispatch({type: 'FINISH_QUIZ'})
@@ -27,6 +29,7 @@ const Options = ({state, dispatch}) => {
             }}/>
         <input type="button" name="answer" value="No" onClick={() => {
                 answerValue = "No"
+                Progress(progress)
                 dispatch({type: 'ANSWER_QUESTION', payload: answerValue})
                 if (state.quizPosition === state.questions.length - 1) {
                     dispatch({type: 'FINISH_QUIZ'})
