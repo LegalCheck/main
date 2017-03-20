@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = ({state, dispatch}) => {
   return (
     <footer>
-      <div className="box">
+      <div>
         <a className='footerCopyright' href="#popup1">Copyright</a>
       </div>
 

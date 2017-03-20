@@ -39,10 +39,6 @@ const reducer = (state = initialState, { type, payload = {} }) => {
       newState.quizPosition = 0
       return newState
       break;
-    case 'SHOW_HIDE_COPYRIGHT':
-      newState.showPopup = !newState.showPopup
-      return newState
-      break;
     default:
       return newState
   }

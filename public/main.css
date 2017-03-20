@@ -304,18 +304,6 @@ footer {
   display: none;
 }
 
-/*.popup {
-  position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    background: white;
-    padding: 75px 5px;
-}
-
-.copyright-close {
-  cursor: pointer;
-}*/
 .overlay {
   position: fixed;
   top: 0;
