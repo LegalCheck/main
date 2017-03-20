@@ -282,7 +282,7 @@ footer {
 	bottom: 0;
 	position: fixed;
 	text-align: center;
-	padding: 0 0 10px 0;
+	/*padding: 0 0 10px 0;*/
 	background-color: #ffffff;
 }
 
@@ -295,7 +295,7 @@ footer {
   background: #65CCAA;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-    padding: 5px 10px;
+    /*padding: 5px 10px;*/
   font-family: 'OpenSans-Light', sans-serif;
 }
 
